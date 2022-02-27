@@ -1,6 +1,7 @@
+import { BaseData } from ".";
 import { ProfileLink } from "./profileLink";
 
-export interface Profile {
+export interface Profile extends BaseData {
   statement: string;
   bio: string;
   displayPictureLgURL: string;
