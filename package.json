@@ -1,6 +1,7 @@
 {
   "name": "portfolio-next",
   "version": "0.1.0",
+  "license": "None",
   "private": true,
   "scripts": {
     "dev": "next dev",
