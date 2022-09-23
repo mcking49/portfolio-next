@@ -1,0 +1,25 @@
+name: Linting
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+      branches:
+        - main
+jobs:
+  run_lint_check:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mskelton/setup-yarn@v1
+        with:
+          node-version: '16.17.0'
+      - run: yarn && yarn lint
+  run_prettier_check:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mskelton/setup-yarn@v1
+        with:
+          node-version: '16.17.0'
+      - run: yarn && yarn prettier
