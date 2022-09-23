@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import { Header } from '../components/header'
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -8,7 +10,19 @@ const Home: NextPage = () => {
         <title>Miten Chauhan | Portfolio</title>
       </Head>
 
-      <main></main>
+      <Header />
+
+      {/* hero */}
+
+      {/* about */}
+
+      {/* experience */}
+
+      {/* skills */}
+
+      {/* projects */}
+
+      {/* contact me */}
     </div>
   )
 }
