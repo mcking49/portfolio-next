@@ -6,11 +6,7 @@
     "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "import",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["import", "@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": [
       "warn",
