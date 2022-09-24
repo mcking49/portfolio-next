@@ -1723,6 +1723,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@heroicons/react@npm:^2.0.11":
+  version: 2.0.11
+  resolution: "@heroicons/react@npm:2.0.11"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 08de055980fbcdcb9c2509ab751064eec11ec02a40e535d368c4bae0fa28b502d6b0c0eb1237652b213fbe543f5ccca461707a4756c34131ff2232ceb6bb5fe7
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.10.4, @humanwhocodes/config-array@npm:^0.10.5":
   version: 0.10.5
   resolution: "@humanwhocodes/config-array@npm:0.10.5"
@@ -9510,6 +9519,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio-next@workspace:."
   dependencies:
+    "@heroicons/react": ^2.0.11
     "@types/node": 18.7.18
     "@types/react": 18.0.21
     "@types/react-dom": 18.0.6
@@ -9528,6 +9538,7 @@ __metadata:
     prettier-eslint: ^15.0.1
     react: 18.2.0
     react-dom: 18.2.0
+    react-hook-form: ^7.36.1
     react-simple-typewriter: ^4.0.2
     react-social-icons: ^5.14.0
     tailwindcss: ^3.1.8
@@ -10703,6 +10714,15 @@ __metadata:
   version: 6.0.11
   resolution: "react-error-overlay@npm:6.0.11"
   checksum: 8fc93942976e0c704274aec87dbc8e21f62a2cc78d1c93f9bcfff9f7494b00c60f7a2f0bd48d832bcd3190627c0255a1df907373f61f820371373a65ec4b2d64
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.36.1":
+  version: 7.36.1
+  resolution: "react-hook-form@npm:7.36.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 28a36ccd600f3781a35fa5eddb1b8ef2c73fa3388814f81d1a71e3d43eb8ff676d3d384dcd16322f29bc89c04d0a87be3972b97cc635b9af2b8f6cf8b55b1f87
   languageName: node
   linkType: hard
 
