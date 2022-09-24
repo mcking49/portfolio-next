@@ -6,14 +6,14 @@ import { Hero } from '../components/sections'
 
 const Home: NextPage = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen snap-y snap-mandatory overflow-auto z-0">
       <Head>
         <title>Miten Chauhan | Portfolio</title>
       </Head>
 
       <Header />
 
-      <section id="hero">
+      <section id="hero" className="snap-center">
         <Hero />
       </section>
 
