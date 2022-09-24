@@ -6,7 +6,7 @@ import { Hero } from '../components/sections'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="h-screen">
       <Head>
         <title>Miten Chauhan | Portfolio</title>
       </Head>
