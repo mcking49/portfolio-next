@@ -13,7 +13,7 @@ import { Projects } from '../components/sections/projects'
 
 const Home: NextPage = () => {
   return (
-    <div className="h-screen snap-y snap-mandatory overflow-auto z-0">
+    <div className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
         <title>Miten Chauhan | Portfolio</title>
       </Head>
