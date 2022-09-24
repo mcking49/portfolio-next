@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 
+import { NavLink } from '../buttons'
 import { SocialIcon } from '../social-icon'
 
 const Header = () => {
@@ -15,17 +16,19 @@ const Header = () => {
         <SocialIcon url="https://github.com/mcking49" />
       </motion.div>
 
-      <motion.div
-        className="flex items-center"
-        initial={{ x: 500, opacity: 0, scale: 0.5 }}
-        animate={{ x: 0, opacity: 1, scale: 1 }}
-        transition={{ duration: 1.5 }}
-      >
-        <SocialIcon className="cursor-pointer" network="email" />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get In Touch
-        </p>
-      </motion.div>
+      <NavLink href="#contact">
+        <motion.div
+          className="flex items-center"
+          initial={{ x: 500, opacity: 0, scale: 0.5 }}
+          animate={{ x: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <SocialIcon className="cursor-pointer" network="email" />
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+            Get In Touch
+          </p>
+        </motion.div>
+      </NavLink>
     </header>
   )
 }
