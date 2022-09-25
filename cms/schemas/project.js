@@ -28,12 +28,6 @@ export default {
       of: [{ type: 'reference', to: { type: 'skill' } }],
     },
     {
-      name: 'points',
-      title: 'Points',
-      type: 'array',
-      of: [{ type: 'string' }],
-    },
-    {
       name: 'linkToProject',
       title: 'LinkToProject',
       type: 'url',
