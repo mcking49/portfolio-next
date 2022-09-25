@@ -6,6 +6,8 @@ node_modules
 .pnp.js
 .yarn/*
 !.yarn/releases
+/cms/.yarn/*
+!/cms/.yarn/releases
 
 # testing
 /coverage
@@ -16,6 +18,7 @@ node_modules
 
 # production
 /build
+/cms/dist
 
 # misc
 .DS_Store
