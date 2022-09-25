@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 import { urlFor } from '../../../sanity'
@@ -19,6 +20,7 @@ const Hero = ({ pageInfo }: Props) => {
     loop: true,
     delaySpeed: 2000,
   })
+
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden pt-[90px]">
       <BackgroundCircles />
@@ -47,7 +49,12 @@ const Hero = ({ pageInfo }: Props) => {
         }}
       />
 
-      <div className="px-10 z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 3, type: 'spring' }}
+        className="px-10 z-10"
+      >
         <h2 className="text-sm uppercase text-gray-500 tracking-[16px]">
           {pageInfo.role}
         </h2>
@@ -62,7 +69,7 @@ const Hero = ({ pageInfo }: Props) => {
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#projects">Projects</NavLink>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
