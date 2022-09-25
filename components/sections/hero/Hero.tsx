@@ -14,7 +14,10 @@ const Hero = ({ pageInfo }: Props) => {
   console.log(pageInfo)
 
   const [text] = useTypewriter({
-    words: [`Hi, i'm ${pageInfo.name}!`, ...(pageInfo.headingHighlights || [])],
+    words: [
+      `Hi, i'm ${pageInfo?.name}!`,
+      ...(pageInfo?.headingHighlights || []),
+    ],
     loop: true,
     delaySpeed: 2000,
   })
@@ -24,7 +27,7 @@ const Hero = ({ pageInfo }: Props) => {
 
       <MotionImage
         imageProps={{
-          src: urlFor(pageInfo.heroImage).url(),
+          src: urlFor(pageInfo?.heroImage).url(),
           alt: 'Profile picture',
           layout: 'fill',
           objectFit: 'cover',

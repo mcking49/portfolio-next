@@ -18,7 +18,7 @@ const Header = ({ socials }: Props) => {
         transition={{ duration: 1.5 }}
       >
         {socials.map((social) => (
-          <SocialIcon key={social._id} url={social.url} />
+          <SocialIcon key={social._id} url={social?.url} />
         ))}
       </motion.div>
 

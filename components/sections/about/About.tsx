@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 
+import { urlFor } from '../../../sanity'
+import { PageInfo } from '../../../types/sanity'
 import { MotionImage } from '../../motion-image'
 
-const About = () => {
+type Props = {
+  pageInfo: PageInfo
+}
+
+const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,7 +23,7 @@ const About = () => {
 
       <MotionImage
         imageProps={{
-          src: 'https://mitenchauhan.com/_nuxt/img/b3064b7.png',
+          src: urlFor(pageInfo.profilePic).url(),
           layout: 'fill',
           priority: true,
           objectFit: 'cover',

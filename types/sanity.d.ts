@@ -15,52 +15,52 @@ interface SanityBody {
 
 export interface Experience extends SanityBody {
   _type: 'experience'
-  company: string
-  companyImage: string
-  dateStarted: Date
-  dateEnded: Date
-  isCurrentlyWorkingHere: boolean
-  jobTitle: string
-  points: string[]
+  company?: string
+  companyImage?: string
+  dateStarted?: Date
+  dateEnded?: Date
+  isCurrentlyWorkingHere?: boolean
+  jobTitle?: string
+  points?: string[]
 
   technologies: Technology[]
 }
 export interface PageInfo extends SanityBody {
   _type: 'pageInfo'
-  address: string
-  backgroundInformation: string
-  email: string
-  headingHighlights: string[]
-  heroImage: Image
-  name: string
-  phoneNumber: string
-  profilePic: Image
-  role: string
+  address?: string
+  backgroundInformation?: string
+  email?: string
+  headingHighlights?: string[]
+  heroImage?: Image
+  name?: string
+  phoneNumber?: string
+  profilePic?: Image
+  role?: string
 }
 
 export interface Project extends SanityBody {
   _type: 'project'
-  image: Image
-  linkToProject: string
-  summary: string
-  technologies: Technology[]
-  title: string
+  image?: Image
+  linkToProject?: string
+  summary?: string
+  technologies?: Technology[]
+  title?: string
 }
 
 export interface Skill extends SanityBody {
   _type: 'skill'
-  image: Image
-  title: string
+  image?: Image
+  title?: string
 }
 
 export interface Social extends SanityBody {
   _type: 'social'
-  title: string
-  url: string
+  title?: string
+  url?: string
 }
 
 export interface Technology extends SanityBody {
   _type: 'skill'
-  image: Image
-  title: string
+  image?: Image
+  title?: string
 }
