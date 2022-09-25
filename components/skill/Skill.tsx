@@ -1,23 +1,26 @@
 import React from 'react'
 
+import { urlFor } from '../../sanity'
+import { Skill } from '../../types/sanity'
 import { MotionImage } from '../motion-image'
 
 type Props = {
   directionLeft?: boolean
+  skill: Skill
 }
 
-const Skill = ({ directionLeft = false }: Props) => {
+const Skill = ({ directionLeft = false, skill }: Props) => {
   return (
     <MotionImage
       imageProps={{
-        src: '',
+        src: urlFor(skill.image)!.url(),
         objectFit: 'contain',
         layout: 'fill',
         objectPosition: 'center',
       }}
       motionProps={{
         className:
-          'relative overflow-hidden h-24 w-24 rounded-full border border-gray-500 xl:w-32 xl:h-32',
+          'relative overflow-hidden h-24 w-24 rounded-md xl:w-32 xl:h-32',
         initial: {
           x: directionLeft ? -200 : 200,
           opacity: 0,

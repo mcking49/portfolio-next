@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 
+import { Skill as ISkill } from '../../../types/sanity'
 import { Skill } from '../../skill'
 
-type Props = {}
+type Props = {
+  skills: ISkill[]
+}
 
-const Skills = ({}: Props) => {
+const Skills = ({ skills }: Props) => {
+  const halfIndex = Math.floor(skills.length / 2)
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,20 +22,9 @@ const Skills = ({}: Props) => {
       </h3>
 
       <div className="grid grid-cols-4 gap-5">
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills.map((skill, i) => (
+          <Skill key={skill._id} skill={skill} directionLeft={i < halfIndex} />
+        ))}
       </div>
     </motion.div>
   )
