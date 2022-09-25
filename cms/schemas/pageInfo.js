@@ -10,6 +10,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'headingHighlights',
+      title: 'HeadingHighlights',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
+    {
       name: 'role',
       title: 'Role',
       type: 'string',

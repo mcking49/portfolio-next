@@ -30,6 +30,7 @@ export interface PageInfo extends SanityBody {
   address: string
   backgroundInformation: string
   email: string
+  headingHighlights: string[]
   heroImage: Image
   name: string
   phoneNumber: string
