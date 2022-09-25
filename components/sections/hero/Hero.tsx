@@ -1,12 +1,21 @@
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
+import { urlFor } from '../../../sanity'
+import { PageInfo } from '../../../types/sanity'
 import { BackgroundCircles } from '../../background-circles'
 import { NavLink } from '../../buttons'
 import { MotionImage } from '../../motion-image'
 
-const Hero = () => {
+type Props = {
+  pageInfo: PageInfo
+}
+
+const Hero = ({ pageInfo }: Props) => {
   const [text] = useTypewriter({
-    words: ["Hi, i'm Miten!", '<FullStackDeveloper andProductOwner />'],
+    words: [
+      `Hi, i'm ${pageInfo?.name}!`,
+      ...(pageInfo?.headingHighlights || []),
+    ],
     loop: true,
     delaySpeed: 2000,
   })
@@ -16,7 +25,7 @@ const Hero = () => {
 
       <MotionImage
         imageProps={{
-          src: 'https://mitenchauhan.com/_nuxt/img/122f864.png',
+          src: urlFor(pageInfo?.heroImage)!.url(),
           alt: 'Profile picture',
           layout: 'fill',
           objectFit: 'cover',
@@ -40,7 +49,7 @@ const Hero = () => {
 
       <div className="px-10 z-10">
         <h2 className="text-sm uppercase text-gray-500 tracking-[16px]">
-          Software Engineer
+          {pageInfo.role}
         </h2>
         <h1 className="font-mono mt-2 text-5xl lg:text-6xl font-semibold">
           <span>{text}</span>

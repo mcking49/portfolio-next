@@ -1,24 +1,34 @@
 import React from 'react'
 
+import { urlFor } from '../../sanity'
+import { Skill } from '../../types/sanity'
 import { MotionImage } from '../motion-image'
-import reactIcon from '../../public/react.png'
 
 type Props = {
   directionLeft?: boolean
+  size?: number
+  skill: Skill
 }
 
-const Skill = ({ directionLeft = false }: Props) => {
+const Skill = ({ directionLeft = false, size, skill }: Props) => {
+  let image = urlFor(skill.image)!.url()
+
+  let sizes = 'h-24 w-24 xl:w-32 xl:h-32'
+
+  if (size) {
+    sizes = `h-${size} w-${size}`
+  }
+
   return (
     <MotionImage
       imageProps={{
-        src: reactIcon,
+        src: image,
         objectFit: 'contain',
         layout: 'fill',
         objectPosition: 'center',
       }}
       motionProps={{
-        className:
-          'relative overflow-hidden h-24 w-24 rounded-full border border-gray-500 xl:w-32 xl:h-32',
+        className: `relative overflow-hidden rounded-md ${sizes}`,
         initial: {
           x: directionLeft ? -200 : 200,
           opacity: 0,

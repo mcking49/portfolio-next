@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -12,34 +12,60 @@ import {
   Skills,
 } from '../components/sections'
 import { Projects } from '../components/sections/projects'
+import {
+  Experience as IExperience,
+  PageInfo,
+  Project,
+  Skill,
+  Social,
+} from '../types/sanity'
+import { fetchExperiences } from '../utils/fetchExperiences'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { fetchProjects } from '../utils/fetchProjects'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchSocials } from '../utils/fetchSocials'
 
-const Home: NextPage = () => {
+interface Props {
+  pageInfo: PageInfo
+  experiences: IExperience[]
+  skills: Skill[]
+  projects: Project[]
+  socials: Social[]
+}
+
+const Home: NextPage<Props> = ({
+  experiences,
+  pageInfo,
+  projects,
+  skills,
+  socials,
+}) => {
   return (
     <div className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
         <title>Miten Chauhan | Portfolio</title>
       </Head>
 
-      <Header />
+      <Header socials={socials} />
 
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       <section id="experience" className="snap-center">
-        <Experience />
+        <Experience experiences={experiences} />
       </section>
 
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id="contact" className="snap-start">
@@ -69,3 +95,24 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo = await fetchPageInfo()
+  const experiences = await fetchExperiences()
+  const projects = await fetchProjects()
+  const skills = await fetchSkills()
+  const socials = await fetchSocials()
+
+  return {
+    props: {
+      experiences,
+      pageInfo,
+      projects,
+      skills,
+      socials,
+    },
+    // TODO: ondemand revalidation
+    // https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#using-on-demand-revalidation
+    revalidate: 10,
+  }
+}
