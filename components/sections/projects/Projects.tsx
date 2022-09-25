@@ -4,6 +4,7 @@ import React from 'react'
 import { urlFor } from '../../../sanity'
 import { Project } from '../../../types/sanity'
 import { MotionImage } from '../../motion-image'
+import { Skill } from '../../skill'
 
 type Props = {
   projects: Project[]
@@ -52,6 +53,12 @@ const Projects = ({ projects }: Props) => {
                   {project.title}
                 </span>
               </h4>
+
+              <div className="flex items-center space-x-2 justify-center">
+                {project.technologies?.map((technology) => (
+                  <Skill key={technology._id} skill={technology} size={10} />
+                ))}
+              </div>
 
               <p className="text-center text-lg md:text-left">
                 {project.summary}

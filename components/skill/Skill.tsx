@@ -6,11 +6,18 @@ import { MotionImage } from '../motion-image'
 
 type Props = {
   directionLeft?: boolean
+  size?: number
   skill: Skill
 }
 
-const Skill = ({ directionLeft = false, skill }: Props) => {
+const Skill = ({ directionLeft = false, size, skill }: Props) => {
   let image = urlFor(skill.image)!.url()
+
+  let sizes = 'h-24 w-24 xl:w-32 xl:h-32'
+
+  if (size) {
+    sizes = `h-${size} w-${size}`
+  }
 
   return (
     <MotionImage
@@ -21,8 +28,7 @@ const Skill = ({ directionLeft = false, skill }: Props) => {
         objectPosition: 'center',
       }}
       motionProps={{
-        className:
-          'relative overflow-hidden h-24 w-24 rounded-md xl:w-32 xl:h-32',
+        className: `relative overflow-hidden rounded-md ${sizes}`,
         initial: {
           x: directionLeft ? -200 : 200,
           opacity: 0,
