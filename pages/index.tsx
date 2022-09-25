@@ -19,11 +19,12 @@ import {
   Skill,
   Social,
 } from '../types/sanity'
-import { fetchExperiences } from '../utils/fetchExperiences'
-import { fetchPageInfo } from '../utils/fetchPageInfo'
-import { fetchProjects } from '../utils/fetchProjects'
-import { fetchSkills } from '../utils/fetchSkills'
-import { fetchSocials } from '../utils/fetchSocials'
+
+import { getExperiences } from './api/getExperience'
+import { getPageInfo } from './api/getPageInfo'
+import { getProjects } from './api/getProjects'
+import { getSkills } from './api/getSkills'
+import { getSocials } from './api/getSocials'
 
 interface Props {
   pageInfo: PageInfo
@@ -97,11 +98,11 @@ const Home: NextPage<Props> = ({
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo = await fetchPageInfo()
-  const experiences = await fetchExperiences()
-  const projects = await fetchProjects()
-  const skills = await fetchSkills()
-  const socials = await fetchSocials()
+  const pageInfo = await getPageInfo()
+  const experiences = await getExperiences()
+  const projects = await getProjects()
+  const skills = await getSkills()
+  const socials = await getSocials()
 
   return {
     props: {
