@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion'
 
+import { Social } from '../../types/sanity'
 import { NavLink } from '../buttons'
 import { SocialIcon } from '../social-icon'
 
-const Header = () => {
+type Props = {
+  socials: Social[]
+}
+
+const Header = ({ socials }: Props) => {
   return (
     <header className="sticky top-0 p-5 flex items-center justify-between max-w-7xl mx-auto z-20">
       <motion.div
@@ -12,8 +17,9 @@ const Header = () => {
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <SocialIcon url="https://www.linkedin.com/in/mitenchauhan" />
-        <SocialIcon url="https://github.com/mcking49" />
+        {socials.map((social) => (
+          <SocialIcon key={social._id} url={social.url} />
+        ))}
       </motion.div>
 
       <NavLink href="#contact">
