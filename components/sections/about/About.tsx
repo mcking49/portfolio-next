@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import React from 'react'
 
 import { urlFor } from '../../../sanity'
 import { PageInfo } from '../../../types/sanity'
@@ -23,7 +22,7 @@ const About = ({ pageInfo }: Props) => {
 
       <MotionImage
         imageProps={{
-          src: urlFor(pageInfo.profilePic).url(),
+          src: urlFor(pageInfo?.profilePic).url(),
           layout: 'fill',
           priority: true,
           objectFit: 'cover',
@@ -52,20 +51,7 @@ const About = ({ pageInfo }: Props) => {
           <span className="underline decoration-[#F7Ab0A]/50">little</span>{' '}
           background
         </h4>
-        <p className="text-base">
-          Hi, I&apos;m Miten! I am currently a web developer who loves to make
-          awesome web apps using popular frontend frameworks like Angular, Vue
-          and React. I believe that one day, the Web will make the App Store
-          obsolete! If you disagree, add me on LinkedIn and let&apos;s have a
-          heated debate (just kidding). In my spare time I like to do a lot of
-          things like making short highlight videos of my trips and significant
-          events in my life, or building computers, watching too many movies and
-          TV shows, going out adventuring, and supporting the Lakers. If you
-          would like to get to know me more, or just want to have a chat, feel
-          free to connect with me. I would love to hear from you. In the
-          meantime, below you will find some of the project&apos;s I&apos;ve
-          worked on over the years.
-        </p>
+        <p className="text-base">{pageInfo.backgroundInformation}</p>
       </div>
     </motion.div>
   )
