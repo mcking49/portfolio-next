@@ -10,10 +10,12 @@ type Props = {
 }
 
 const Skill = ({ directionLeft = false, skill }: Props) => {
+  let image = urlFor(skill.image)!.url()
+
   return (
     <MotionImage
       imageProps={{
-        src: urlFor(skill.image)!.url(),
+        src: image,
         objectFit: 'contain',
         layout: 'fill',
         objectPosition: 'center',

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Skill as ISkill } from '../../../types/sanity'
 import { Skill } from '../../skill'
@@ -10,6 +10,21 @@ type Props = {
 
 const Skills = ({ skills }: Props) => {
   const halfIndex = Math.floor(skills.length / 2)
+
+  useEffect(() => {
+    skills
+      .filter((skill) => !!skill.title && !!skill.image)
+      .sort((a, b) => {
+        if (a.title! < b.title!) {
+          return -1
+        } else if (a.title! > b.title!) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+  }, [skills])
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
