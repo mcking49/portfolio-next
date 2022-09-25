@@ -1,5 +1,6 @@
 import { createClient, ClientConfig } from 'next-sanity'
 import createImageUrlBuilder from '@sanity/image-url'
+import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder'
 
 export const config: ClientConfig = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
@@ -10,5 +11,5 @@ export const config: ClientConfig = {
 
 export const sanityClient = createClient(config)
 
-export const urlFor = (source: any) =>
-  createImageUrlBuilder(config).image(source)
+export const urlFor = (source: any): ImageUrlBuilder | undefined =>
+  createImageUrlBuilder(sanityClient).image(source)

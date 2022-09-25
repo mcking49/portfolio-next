@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { MotionImage } from '../motion-image'
-import reactIcon from '../../public/react.png'
 
 type Props = {
   directionLeft?: boolean
@@ -11,7 +10,7 @@ const Skill = ({ directionLeft = false }: Props) => {
   return (
     <MotionImage
       imageProps={{
-        src: reactIcon,
+        src: '',
         objectFit: 'contain',
         layout: 'fill',
         objectPosition: 'center',

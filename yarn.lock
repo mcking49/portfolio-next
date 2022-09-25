@@ -5100,6 +5100,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.29.3":
+  version: 2.29.3
+  resolution: "date-fns@npm:2.29.3"
+  checksum: aa9128c876ef69a05988029d6aa3d7e5c47a1e978f18b77b48126683d1a2e6605a16c3f5293ca9f4ca790d0755b5061fcea5b469f097871cd53f6590a5c1adc4
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.6.0, debug@npm:^2.6.8, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -9838,6 +9845,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.38.0
     "@typescript-eslint/parser": ^5.38.0
     autoprefixer: ^10.4.12
+    date-fns: ^2.29.3
     eslint: 8.23.1
     eslint-config-next: 12.3.1
     eslint-config-prettier: ^8.5.0

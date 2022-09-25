@@ -22,7 +22,7 @@ const About = ({ pageInfo }: Props) => {
 
       <MotionImage
         imageProps={{
-          src: urlFor(pageInfo?.profilePic).url(),
+          src: urlFor(pageInfo?.profilePic)!.url(),
           layout: 'fill',
           priority: true,
           objectFit: 'cover',
