@@ -112,8 +112,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       socials,
     },
-    // TODO: ondemand revalidation
-    // https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#using-on-demand-revalidation
-    revalidate: 10,
   }
 }
